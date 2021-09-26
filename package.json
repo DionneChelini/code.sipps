@@ -1,6 +1,6 @@
 {
-  "homepage": "https://DionneChelini.github.io/code.reps",
   "name": "re",
+  "homepage": ".",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
@@ -13,7 +13,6 @@
     "@testing-library/user-event": "^12.8.3",
     "@tippyjs/react": "^4.2.5",
     "codemirror": "^5.61.1",
-    "gh-pages": "^3.2.3",
     "react": "^17.0.2",
     "react-codemirror2": "^7.2.1",
     "react-dom": "^17.0.2",
@@ -23,8 +22,6 @@
     "web-vitals": "^1.1.2"
   },
   "scripts": {
-    "predeploy": "npm run build",
-    "deploy": "gh-pages -d build",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
