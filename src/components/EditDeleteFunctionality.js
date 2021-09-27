@@ -23,13 +23,15 @@ const EditDeleteFunctionality = () => {
       <div>
         <div
           onClick={editHandler}
-          className='btn btn-sm bg-grey z-depth-1 text-dark B612 cursor-pointer'
+          className='btn btn-sm bg-dark z-depth-1 text-mid-grey B612 cursor-pointer'
         >
-          <FontAwesomeIcon icon={faPencilAlt} className='f-14 text-dark' /> EDIT
+          <FontAwesomeIcon icon={faPencilAlt} className='f-14 text-green' />{' '}
+          EDIT
         </div>
         {editCard ? (
-          <div className='btn btn-sm bg-grey z-depth-1 text-dark B612 cursor-pointer ml-1'>
-            <FontAwesomeIcon icon={faSave} className='f-14 text-dark' /> SAVE
+          <div className='btn btn-sm bg-dark z-depth-1 text-mid-grey B612 cursor-pointer ml-1'>
+            <FontAwesomeIcon icon={faSave} className='f-14 text-mid-grey' />{' '}
+            SAVE
           </div>
         ) : (
           ''
@@ -38,16 +40,19 @@ const EditDeleteFunctionality = () => {
       <div>
         <div
           onClick={deleteHandler}
-          className='btn btn-sm bg-grey text-dark  z-depth-1 B612 cursor-pointer mr-1'
+          className='btn btn-sm bg-dark text-mid-grey  z-depth-1 B612 cursor-pointer mr-1'
         >
-          <FontAwesomeIcon icon={faTrash} className='f-14 prp-4 text-dark' />{' '}
+          <FontAwesomeIcon icon={faTrash} className='f-14 prp-4 text-red' />{' '}
           DELETE
         </div>
         <div
           onClick={prioritizeHandler}
-          className='btn btn-sm bg-grey text-dark  z-depth-1 B612 cursor-pointer'
+          className='btn btn-sm bg-dark text-mid-grey  z-depth-1 B612 cursor-pointer'
         >
-          <FontAwesomeIcon icon={faCarrot} className='f-14  prp-4 text-dark' />{' '}
+          <FontAwesomeIcon
+            icon={faCarrot}
+            className='f-14  prp-4 text-orange'
+          />{' '}
           PRIORITIZE
         </div>
       </div>

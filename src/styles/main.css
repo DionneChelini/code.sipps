@@ -15,7 +15,38 @@
   src: url('../fonts/TitilliumWeb-Regular.ttf');
   font-family: 'TitilliumRegular';
 }
+.CodeMirror {
+  /* Set height, width, borders, and global font properties here */
+  height: 330px;
+}
 
+.CodeMirror-scroll {
+  background: rgb(245, 244, 244);
+}
+.CodeMirror-selected {
+  background: #4032ffb4;
+  border-radius: 10px;
+
+  /* border: 2px dashed rgb(16, 20, 255); */
+}
+.CodeMirror-wrap pre.CodeMirror-line {
+  z-index: 0;
+}
+
+.CodeMirror-focused .CodeMirror-selected {
+  background: #4032ffb4;
+}
+
+.CodeMirror-line::selection,
+.CodeMirror-line > span::selection,
+.CodeMirror-line > span > span::selection {
+  background: #4032ffb4;
+}
+.CodeMirror-line::-moz-selection,
+.CodeMirror-line > span::-moz-selection,
+.CodeMirror-line > span > span::-moz-selection {
+  background: #4032ffb4;
+}
 .z-index-50 {
   z-index: 50;
 }
@@ -2768,9 +2799,12 @@ input {
 .dotted-bottom-border {
   border-bottom: #5a585a dashed 3px;
 }
+.dotted-thick-border {
+  border: #5a585a dashed 3px;
+}
 
 .dotted-border {
-  border: #ec2bec dashed 2px;
+  border: #5a585a dashed 3px;
 }
 
 .checkbox {
@@ -3126,6 +3160,7 @@ img {
     display: none !important;
   }
 }
+
 .rounded-sm {
   border-radius: 0.2rem !important;
 }

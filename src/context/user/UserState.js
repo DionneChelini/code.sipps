@@ -8,6 +8,7 @@ import {
   SET_EDIT_STATE,
   SET_EDITOR_STATE,
   FILTER_CARDS,
+  SET_IS_SELECTED,
 } from '../types';
 
 const UserState = (props) => {
@@ -63,6 +64,7 @@ const UserState = (props) => {
     renderEditor: '',
     editCard: false,
     filtered: null,
+    isSelected: null,
   };
 
   const [state, dispatch] = useReducer(userReducer, initialState);
@@ -83,6 +85,9 @@ const UserState = (props) => {
   const filterCards = (text) => {
     dispatch({ type: FILTER_CARDS, payload: text });
   };
+  const setIsSelected = (bool) => {
+    dispatch({ type: SET_IS_SELECTED, payload: bool });
+  };
   return (
     <UserContext.Provider
       value={{
@@ -96,6 +101,8 @@ const UserState = (props) => {
         createCard,
         filtered: state.filtered,
         filterCards,
+        isSelected: state.isSelected,
+        setIsSelected,
       }}
     >
       {props.children}

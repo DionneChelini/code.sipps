@@ -27,7 +27,13 @@ const CardEditor = ({ styles }) => {
   const [data, setData] = useState();
   const [value, setValue] = useState();
   const userContext = useContext(UserContext);
-  const { activeCard, editCard, renderEditor, setEditorContent } = userContext;
+  const {
+    activeCard,
+    editCard,
+    renderEditor,
+    setEditorContent,
+    cards,
+  } = userContext;
 
   useEffect(() => {
     setValue(renderEditor);
@@ -40,13 +46,11 @@ const CardEditor = ({ styles }) => {
     setData(data);
     setValue(value);
   };
-  const handleKeyDown = (editor, event) => {
-    console.log(event);
-    console.log(editor);
-  };
-
+  if (cards.length === 0) {
+    return <h4>Please add a card to get started</h4>;
+  }
   return (
-    <div className='rounded'>
+    <div className='rounded-lg'>
       <ControlledEditor
         onBeforeChange={handleChange}
         value={value}

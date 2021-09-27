@@ -3,10 +3,19 @@ import UserContext from '../context/user/userContext';
 
 const CardTitle = () => {
   const userContext = useContext(UserContext);
-  const { activeCard } = userContext;
+  const { activeCard, cards } = userContext;
 
   useEffect(() => [activeCard]);
-
+  if (!cards || !activeCard) {
+    return (
+      <div className='border-bottom-thin pl-1 d-flex align-items-center'>
+        <p className='f-19 m-0 text-dark titillium prp-8'>Title</p>
+        <p className='f-13 text-dark titilliumRegular  bg-mid-grey rounded pxp-6 pyp-3'>
+          Subtitle
+        </p>
+      </div>
+    );
+  }
   return (
     <div className='border-bottom-thin pl-1 d-flex align-items-center'>
       <p className='f-19 m-0 text-dark titillium prp-8'>

@@ -5,6 +5,7 @@ import {
   SET_EDIT_STATE,
   SET_EDITOR_STATE,
   FILTER_CARDS,
+  SET_IS_SELECTED,
 } from '../types';
 
 let reducer = (state, action) => {
@@ -33,6 +34,11 @@ let reducer = (state, action) => {
       return {
         ...state,
         cards: [...state.cards, action.payload],
+      };
+    case SET_IS_SELECTED:
+      return {
+        ...state,
+        isSelected: action.payload,
       };
     case FILTER_CARDS:
       return {

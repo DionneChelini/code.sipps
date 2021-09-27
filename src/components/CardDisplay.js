@@ -8,10 +8,7 @@ const CardDisplay = () => {
   const userContext = useContext(UserContext);
   const { cards, activeCard, filtered } = userContext;
   useEffect(() => {}, [activeCard]);
-
-  if (cards.length === 0) {
-    return <h4>Please add a card to get started</h4>;
-  }
+  console.log(cards);
 
   return (
     <SimpleBar style={{ maxHeight: 380 }} className='border-right-thin'>

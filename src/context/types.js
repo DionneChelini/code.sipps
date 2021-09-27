@@ -4,3 +4,4 @@ export const SET_CARD = 'SET_CARD';
 export const SET_EDIT_STATE = 'SET_EDIT_STATE';
 export const SET_EDITOR_STATE = 'SET_EDITOR_STATE';
 export const FILTER_CARDS = 'FILTER_CARDS';
+export const SET_IS_SELECTED = 'SET_IS_SELECTED';

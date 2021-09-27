@@ -9,17 +9,26 @@ import UserContext from '../context/user/userContext';
 
 const Home = () => {
   const userContext = useContext(UserContext);
-  const { activeCard, setEditorContent, setEditState } = userContext;
+  const {
+    activeCard,
+    setEditorContent,
+    setEditState,
+    cards,
+    activateCard,
+  } = userContext;
+
   useEffect(() => {
+    activateCard(cards[0]);
     setEditorContent(activeCard.snippet);
     setEditState(false);
     // eslint-disable-next-line
   }, []);
+
   return (
-    <div className='bg-light-grey mt-1 p-1'>
+    <div className='bg-light-grey mt-1 container-main p-2 rounded-lg z-depth-4'>
       <div className='container-main'>
         <section className='mb-1 d-flex align-items-center justify-content-space-between'>
-          <button className='btn btn-lg bg-pink text-dark z-depth-1 B612'>
+          <button className='btn btn-lg bg-dark text-light-blue z-depth-1 B612'>
             TRAIN NOW
           </button>
           <p className='f-16 text-dark-grey'>

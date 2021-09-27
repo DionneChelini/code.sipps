@@ -64,13 +64,6 @@ const CardInputDetails = () => {
               type='text'
               className='input input-border f-20 text-dark w-77 p-1 mr-2 '
             />
-            <button className='btn btn-sm bg-black text-white w-33 titillium f-24 text-dark'>
-              <FontAwesomeIcon
-                icon={faSave}
-                className='f-14 text-white prp-4'
-              />{' '}
-              SAVE SNIPPET
-            </button>
           </div>
           <div className='d-flex justify-content-end'></div>
         </div>

@@ -1,21 +1,26 @@
 import React, { useEffect, useState, useContext } from 'react';
+import CopySnippet from '../components/CopySnippet';
 import 'codemirror/lib/codemirror.css';
 import 'codemirror/mode/javascript/javascript';
 // Keymaps
 import 'codemirror/keymap/sublime';
 // Addons
-
 import { Controlled as ControlledEditor } from 'react-codemirror2';
 //Context
 import UserContext from '../context/user/userContext';
-import { render } from '@testing-library/react';
 
-const CardEditor = ({ styles }) => {
+const CreateCardEditor = ({ styles }) => {
   const [data, setData] = useState();
   const [value, setValue] = useState();
-  const [isSelected, setIsSelected] = useState();
   const userContext = useContext(UserContext);
-  const { activeCard, editCard, renderEditor, setEditorContent } = userContext;
+  const {
+    activeCard,
+    editCard,
+    renderEditor,
+    setEditorContent,
+    setIsSelected,
+    isSelected,
+  } = userContext;
 
   useEffect(() => {
     setValue(renderEditor);
@@ -26,30 +31,32 @@ const CardEditor = ({ styles }) => {
   const handleChange = (editor, data, value) => {
     setData(data);
     setValue(value);
-    setIsSelected(editor.doc.somethingSelected());
-    console.log(isSelected);
   };
   const onSelection = (editor, data) => {
-    console.log(editor);
     if (editor.doc.somethingSelected()) {
       setIsSelected(true);
-    } else {
-      setIsSelected(false);
     }
+  };
+  const onFocus = (editor, data) => {
+    setValue('');
+  };
+  const onBlur = (editor, data) => {
+    setValue("Paste or type a code snippet you'd like to remember");
   };
 
   return (
-    <div className='rounded'>
+    <div className='rounded-lg'>
       <ControlledEditor
         onBeforeChange={handleChange}
         onSelection={onSelection}
+        onFocus={onFocus}
+        onBlur={onBlur}
         value={value}
         data={data}
-        className={`${styles} f-28`}
+        className='text-mid-grey mt-1  f-28'
         options={{
           tabSize: 12,
           comment: true,
-          readOnly: editCard ? false : 'nocursor',
           autocorrect: true,
           autocursor: true,
           smartIndent: true,
@@ -74,4 +81,4 @@ const CardEditor = ({ styles }) => {
   );
 };
 
-export default CardEditor;
+export default CreateCardEditor;
