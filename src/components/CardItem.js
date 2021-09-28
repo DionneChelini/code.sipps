@@ -17,7 +17,7 @@ const CardItem = ({ card, id }) => {
       onClick={onClick}
       className={`${
         activeCard.id === card.id
-          ? 'dotted-border bg-light-blue z-depth-5'
+          ? 'dotted-border bg-light-blue z-depth-1'
           : 'bg-white border'
       }  mp-4 px-1 pyp-19 mbp-4  z-depth-1 pp-6 d-flex align-items-center justify-content-space-between cursor-pointer titillium rounded-lg `}
     >

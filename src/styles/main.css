@@ -22,6 +22,7 @@
 
 .CodeMirror-scroll {
   background: rgb(245, 244, 244);
+  padding: 1.3rem;
 }
 .CodeMirror-selected {
   background: #4032ffb4;
@@ -2800,11 +2801,11 @@ input {
   border-bottom: #5a585a dashed 3px;
 }
 .dotted-thick-border {
-  border: #5a585a dashed 3px;
+  border: #5a585a dashed 2px;
 }
 
 .dotted-border {
-  border: #5a585a dashed 3px;
+  border: #5a585a dashed 2px;
 }
 
 .checkbox {

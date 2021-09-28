@@ -29,16 +29,16 @@ const CardInputDetails = () => {
     createCard(card);
   };
   return (
-    <div className='mt-1 text-dark f-24 titillium '>
+    <div className='pl-1 text-dark f-16 titillium'>
       <form onSubmit={onSubmit}>
         <div className='d-flex align-items-center'>
-          <p className='text-dark mrp-4'>This card is about</p>
+          <p className='text-dark mrp-4'>This snippet is about</p>
           <input
             name='title'
             onChange={handleInput}
             placeholder='javascript'
             type='text'
-            className='dotted-bottom-border titillium f-28 text-mid-grey m-0 p-0 ptp-1 text-center w-25'
+            className='dotted-bottom-border titillium f-16 text-mid-grey m-0 p-0 ptp-1 text-center w-25'
             style={{ height: '27px' }}
           />
           <p className='text-dark mrp-4'>and I've just learned how to</p>
@@ -47,11 +47,11 @@ const CardInputDetails = () => {
             onChange={handleInput}
             placeholder='import a library'
             type='text'
-            className='dotted-bottom-border titillium f-28 text-mid-grey  m-0 p-0 ptp-1  text-center w-25'
+            className='dotted-bottom-border titillium f-16 text-mid-grey  m-0 p-0 ptp-1  text-center w-25'
             style={{ height: '27px' }}
           />
         </div>
-        <div className='mt-1'>
+        {/* <div className='mt-1'>
           <p className='text-dark mrp-4 titilliumRegular'>
             <span className='text-black titillium'>Source URL:</span> where does
             this information come from? (optional){' '}
@@ -66,7 +66,7 @@ const CardInputDetails = () => {
             />
           </div>
           <div className='d-flex justify-content-end'></div>
-        </div>
+        </div> */}
       </form>
     </div>
   );

@@ -86,7 +86,10 @@ const UserState = (props) => {
     dispatch({ type: FILTER_CARDS, payload: text });
   };
   const setIsSelected = (bool) => {
-    dispatch({ type: SET_IS_SELECTED, payload: bool });
+    dispatch({
+      type: SET_IS_SELECTED,
+      payload: bool,
+    });
   };
   return (
     <UserContext.Provider

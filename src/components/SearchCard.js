@@ -12,7 +12,7 @@ const SearchCard = () => {
     filterCards(e.target.value);
   };
   return (
-    <div className='d-flex align-items-center px-1 pyp-4 pbp-8 ptp-7 border-right-thin border-bottom-thin'>
+    <div className='d-flex align-items-center px-1 pyp-4 pbp-8 ptp-7 border-bottom-thin'>
       {' '}
       <FontAwesomeIcon
         icon={faSearch}
@@ -23,7 +23,7 @@ const SearchCard = () => {
         onChange={handleInput}
         type='text'
         className='f-16'
-        placeholder='Type to Search...'
+        placeholder='Search snippet library...'
       />
     </div>
   );

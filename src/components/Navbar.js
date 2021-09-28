@@ -17,7 +17,7 @@ const Navbar = (props) => {
                 icon={faHandScissors}
                 className='f-20 text-light-blue plp-2'
               />{' '}
-              Snips
+              Snip
             </h1>
             <ul className='d-flex m-0 justify-space-between'>
               <li className='m-0 pr-1 f-14 text-white cursor-pointer'>

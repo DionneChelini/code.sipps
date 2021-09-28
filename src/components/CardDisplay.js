@@ -11,7 +11,7 @@ const CardDisplay = () => {
   console.log(cards);
 
   return (
-    <SimpleBar style={{ maxHeight: 380 }} className='border-right-thin'>
+    <SimpleBar style={{ maxHeight: 380 }} className=''>
       {filtered !== null
         ? filtered.map((card) => (
             <CardItem key={card.id} id={card.id} card={card} />

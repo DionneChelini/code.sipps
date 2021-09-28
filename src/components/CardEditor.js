@@ -64,7 +64,7 @@ const CardEditor = ({ styles }) => {
           autocursor: true,
           smartIndent: true,
           lineWrapping: true,
-          mode: 'plaintext',
+          mode: 'javascript',
           lineNumbers: false,
           foldGutter: true,
           autoCloseTags: true,
