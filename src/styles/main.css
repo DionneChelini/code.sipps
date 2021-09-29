@@ -15,6 +15,13 @@
   src: url('../fonts/TitilliumWeb-Regular.ttf');
   font-family: 'TitilliumRegular';
 }
+
+@media screen and (max-width: 567px) {
+  .tags-input {
+    width: calc(100vw - 32px);
+  }
+}
+
 .CodeMirror {
   /* Set height, width, borders, and global font properties here */
   height: 330px;

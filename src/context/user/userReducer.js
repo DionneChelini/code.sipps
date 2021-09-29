@@ -51,7 +51,7 @@ let reducer = (state, action) => {
         ...state,
         filtered: state.cards.filter((cards) => {
           const regex = new RegExp(`${action.payload}`, 'gi');
-          return cards.title.match(regex) || cards.learn.match(regex);
+          return cards.title.match(regex) || cards.subtitle.match(regex);
         }),
       };
 

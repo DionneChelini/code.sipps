@@ -1,21 +1,21 @@
 import React, { useEffect, useContext } from 'react';
 import SnippetCreateEditor from '../components/SnippetCreateEditor';
 import UserContext from '../context/user/userContext';
-import AlertContext from '../context/alert/alertContext';
 import SnippetDescription from '../components/SnippetDescription';
-import SnippetReference from '../components/SnippetRefererence';
 import BackButton from '../components/BackButton';
 import Alerts from '../components/Alerts';
+import TagsInput from '../components/TagsInput';
 const CreateCard = () => {
   const userContext = useContext(UserContext);
-  const alertContext = useContext(AlertContext);
+
   const { renderEditor, setEditState, value, setValue } = userContext;
-  const { alerts, setAlert } = alertContext;
+
   useEffect(() => {
     setEditState(true);
 
     //eslint-disable-next-line
   }, [renderEditor]);
+  const selectedTags = (defaultTags) => {};
   return (
     <div className='mt-1'>
       <div className='container-main'>
@@ -26,9 +26,12 @@ const CreateCard = () => {
           </div>
 
           <section className='border bg-white rounded mt-1'>
-            <div className='d-flex align-items-center w-100 border-bottom-thin'>
-              <div className='w-25'>
-                <SnippetReference />
+            <div className='d-flex align-items-center border-bottom-thin'>
+              <div>
+                <TagsInput
+                  defaultTags={['Nodejs', 'MongoDB']}
+                  selectedTags={selectedTags}
+                />
               </div>
             </div>
             <section className='d-flex '>
