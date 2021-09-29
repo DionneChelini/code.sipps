@@ -9,6 +9,7 @@ import {
   SET_EDITOR_STATE,
   FILTER_CARDS,
   SET_IS_SELECTED,
+  SET_VALUE,
 } from '../types';
 
 const UserState = (props) => {
@@ -17,54 +18,17 @@ const UserState = (props) => {
       {
         id: 1,
         title: 'start a headless browser',
-        learn: 'the library puppeteer',
-        snippet:
-          'useEffect(() => {setValue(renderEditor);// eslint-disable-next-line}, [renderEditor]);const handleChange = (editor, data, value) => {setData(data);setValu(value);};',
-      },
-      {
-        id: 2,
-        title: 'how to import',
-        learn: 'basic javscript import',
-        snippet:
-          'useEffect(() => {setValue(renderEditor);// eslint-disable-next-line}, [renderEditor]);const handleChange = (editor, data, value) => {setData(data);setValu(value);};',
-      },
-      {
-        id: 3,
-        title: 'react boiler plate',
-        learn: 'boiler plate setup',
-        snippet: 'let name = "Briam"',
-      },
-      {
-        id: 4,
-        title: 'Javascript string literal',
-        learn: 'String literals',
-        snippet: 'let name = "Mary"',
-      },
-      {
-        id: 5,
-        title: 'Javascript string literal',
-        learn: 'String literals',
-        snippet: 'let name = "Mary"',
-      },
-      {
-        id: 6,
-        title: 'Javascript string literal',
-        learn: 'String literals',
+        subtitle: 'the library puppeteer',
         snippet:
           'useEffect(() => {setValue(renderEditor);// eslint-disable-next-line}, [renderEditor]);const handleChange = (editor, data, value) => {setData(data);setValu(value);};',
       },
     ],
-    activeCard: {
-      id: 1,
-      title: 'start a headless browser',
-      learn: 'the library puppeteer',
-      snippet:
-        'useEffect(() => {setValue(renderEditor);// eslint-disable-next-line}, [renderEditor]);const handleChange = (editor, data, value) => {setData(data);setValu(value);};',
-    },
+    activeCard: null,
     renderEditor: '',
     editCard: false,
     filtered: null,
     isSelected: null,
+    value: '',
   };
 
   const [state, dispatch] = useReducer(userReducer, initialState);
@@ -91,6 +55,12 @@ const UserState = (props) => {
       payload: bool,
     });
   };
+  const setValue = (value) => {
+    dispatch({
+      type: SET_VALUE,
+      payload: value,
+    });
+  };
   return (
     <UserContext.Provider
       value={{
@@ -106,6 +76,8 @@ const UserState = (props) => {
         filterCards,
         isSelected: state.isSelected,
         setIsSelected,
+        value: state.value,
+        setValue,
       }}
     >
       {props.children}

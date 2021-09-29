@@ -3,10 +3,10 @@ import { faSearch } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import UserContext from '../context/user/userContext';
 
-const SearchCard = () => {
+const SearchSnippet = () => {
   const userContext = useContext(UserContext);
   const { filterCards } = userContext;
-  const [input, setInput] = useState({ text: '' });
+  const [input] = useState({ text: '' });
 
   const handleInput = (e) => {
     filterCards(e.target.value);
@@ -29,4 +29,4 @@ const SearchCard = () => {
   );
 };
 
-export default SearchCard;
+export default SearchSnippet;

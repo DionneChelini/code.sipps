@@ -1,7 +1,7 @@
 import React from 'react';
 import { faTags } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-const CardInputTags = () => {
+const SnippetReference = () => {
   return (
     <div className='d-flex align-items-center px-1 pyp-4 pbp-8 ptp-7 border-right-thin'>
       <section
@@ -24,4 +24,4 @@ const CardInputTags = () => {
   );
 };
 
-export default CardInputTags;
+export default SnippetReference;

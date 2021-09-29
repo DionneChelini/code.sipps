@@ -1,26 +1,27 @@
 import React, { useContext, useEffect } from 'react';
 import UserContext from '../context/user/userContext';
-import CardItem from './CardItem';
+import SnippetItem from './SnippetItem';
 import SimpleBar from 'simplebar-react';
 import 'simplebar/dist/simplebar.min.css';
 
-const CardDisplay = () => {
+const SnippetDisplay = () => {
   const userContext = useContext(UserContext);
   const { cards, activeCard, filtered } = userContext;
   useEffect(() => {}, [activeCard]);
-  console.log(cards);
+
+  if (!cards) return <h1>There are no cards</h1>;
 
   return (
     <SimpleBar style={{ maxHeight: 380 }} className=''>
       {filtered !== null
         ? filtered.map((card) => (
-            <CardItem key={card.id} id={card.id} card={card} />
+            <SnippetItem key={card.id} id={card.id} card={card} />
           ))
         : cards.map((card) => (
-            <CardItem key={card.id} id={card.id} card={card} />
+            <SnippetItem key={card.id} id={card.id} card={card} />
           ))}
     </SimpleBar>
   );
 };
 
-export default CardDisplay;
+export default SnippetDisplay;

@@ -23,24 +23,17 @@ import { Controlled as ControlledEditor } from 'react-codemirror2';
 //Context
 import UserContext from '../context/user/userContext';
 
-const CardEditor = ({ styles }) => {
+const SnippetLibEditor = () => {
   const [data, setData] = useState();
   const [value, setValue] = useState();
   const userContext = useContext(UserContext);
-  const {
-    activeCard,
-    editCard,
-    renderEditor,
-    setEditorContent,
-    cards,
-  } = userContext;
+  const { editCard, cards, activeCard } = userContext;
 
   useEffect(() => {
-    setValue(renderEditor);
-    // setEditorContent(value);
-
+    if (!activeCard) return null;
+    setValue(activeCard.snippet);
     // eslint-disable-next-line
-  }, [renderEditor]);
+  }, [activeCard]);
 
   const handleChange = (editor, data, value) => {
     setData(data);
@@ -55,7 +48,7 @@ const CardEditor = ({ styles }) => {
         onBeforeChange={handleChange}
         value={value}
         data={data}
-        className={`${styles} f-28`}
+        className='p-1 border-bottom-thin text-dark-grey f-28'
         options={{
           tabSize: 12,
           comment: true,
@@ -81,4 +74,4 @@ const CardEditor = ({ styles }) => {
   );
 };
 
-export default CardEditor;
+export default SnippetLibEditor;

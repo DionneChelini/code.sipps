@@ -1,19 +1,24 @@
-import React, { useContext, useEffect } from 'react';
+import React, { useContext } from 'react';
 import { faAngleRight } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import UserContext from '../context/user/userContext';
+import { motion } from 'framer-motion';
 
-const CardItem = ({ card, id }) => {
+const SnippetItem = ({ card, id }) => {
   const userContext = useContext(UserContext);
-  const { activeCard, activateCard, setEditorContent, cards } = userContext;
+  const { activeCard, activateCard, setEditorContent } = userContext;
 
   const onClick = (e) => {
     activateCard(card);
     setEditorContent(card.snippet);
   };
+  if (!activeCard) return null;
 
   return (
-    <div
+    <motion.div
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      transition={{ duration: 1 }}
       onClick={onClick}
       className={`${
         activeCard.id === card.id
@@ -22,29 +27,17 @@ const CardItem = ({ card, id }) => {
       }  mp-4 px-1 pyp-19 mbp-4  z-depth-1 pp-6 d-flex align-items-center justify-content-space-between cursor-pointer titillium rounded-lg `}
     >
       <div>
-        <p
-          className={`${
-            activeCard.id === card.id ? 'text-dark' : 'text-dark'
-          } f-18 m-0 `}
-        >
+        <p className='f-18 m-0'>
           {card.title.substring(0, 1).toUpperCase() + card.title.substring(1)}
         </p>
-        <p
-          className={`${
-            activeCard.id === card.id ? 'text-dark ' : 'text-dark'
-          } f-11 m-0 `}
-        >
-          {card.learn}
-        </p>
+        <p className='text-dark f-11 m-0'>{card.subtitle}</p>
       </div>
       <FontAwesomeIcon
         icon={faAngleRight}
-        className={`${
-          activeCard.id === card.id ? 'text-dark' : 'text-dark'
-        } f-24 font-weight-light prp-4 `}
+        className='text-dark f-24 font-weight-light prp-4'
       />
-    </div>
+    </motion.div>
   );
 };
 
-export default CardItem;
+export default SnippetItem;

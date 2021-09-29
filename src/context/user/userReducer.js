@@ -6,10 +6,16 @@ import {
   SET_EDITOR_STATE,
   FILTER_CARDS,
   SET_IS_SELECTED,
+  SET_VALUE,
 } from '../types';
 
 let reducer = (state, action) => {
   switch (action.type) {
+    case SET_VALUE:
+      return {
+        ...state,
+        value: action.payload,
+      };
     case GET_SNIPPETS:
       return {
         ...state,

@@ -5,3 +5,6 @@ export const SET_EDIT_STATE = 'SET_EDIT_STATE';
 export const SET_EDITOR_STATE = 'SET_EDITOR_STATE';
 export const FILTER_CARDS = 'FILTER_CARDS';
 export const SET_IS_SELECTED = 'SET_IS_SELECTED';
+export const SET_VALUE = 'SET_VALUE';
+export const SET_ALERT = 'SET_ALERT';
+export const REMOVE_ALERT = 'REMOVE_ALERT';

@@ -9,7 +9,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 //Context
 import UserContext from '../context/user/userContext';
 
-const EditDeleteFunctionality = () => {
+const SnippetCrudFunctionality = () => {
   const userContext = useContext(UserContext);
   const { setEditState, editCard } = userContext;
 
@@ -66,4 +66,4 @@ const EditDeleteFunctionality = () => {
   );
 };
 
-export default EditDeleteFunctionality;
+export default SnippetCrudFunctionality;

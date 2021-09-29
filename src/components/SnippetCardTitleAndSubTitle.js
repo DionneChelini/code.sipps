@@ -1,7 +1,7 @@
 import React, { useContext, useEffect } from 'react';
 import UserContext from '../context/user/userContext';
 
-const CardTitle = () => {
+const SnippetCardTitleAndSubTitle = () => {
   const userContext = useContext(UserContext);
   const { activeCard, cards } = userContext;
 
@@ -23,11 +23,11 @@ const CardTitle = () => {
           activeCard.title.substring(1)}
       </p>
       <p className='f-13 text-dark titilliumRegular  bg-mid-grey rounded pxp-6 pyp-3'>
-        {activeCard.learn.substring(0, 1).toUpperCase() +
-          activeCard.learn.substring(1)}
+        {activeCard.subtitle.substring(0, 1).toUpperCase() +
+          activeCard.subtitle.substring(1)}
       </p>
     </div>
   );
 };
 
-export default CardTitle;
+export default SnippetCardTitleAndSubTitle;

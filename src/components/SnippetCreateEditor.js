@@ -1,29 +1,13 @@
-import React, { useEffect, useState, useContext } from 'react';
+import React, { useState } from 'react';
 import 'codemirror/lib/codemirror.css';
 import 'codemirror/mode/javascript/javascript';
 // Keymaps
 import 'codemirror/keymap/sublime';
 // Addons
 import { Controlled as ControlledEditor } from 'react-codemirror2';
-//Context
-import UserContext from '../context/user/userContext';
 
-const CreateCardEditor = ({ styles }) => {
+const CreateCardEditor = ({ styles, value, setValue }) => {
   const [data, setData] = useState();
-  const [value, setValue] = useState();
-  const userContext = useContext(UserContext);
-  const {
-    activeCard,
-    editCard,
-    renderEditor,
-    setEditorContent,
-    setIsSelected,
-    isSelected,
-  } = userContext;
-
-  useEffect(() => {
-    // eslint-disable-next-line
-  }, []);
 
   const handleChange = (editor, data, value) => {
     setData(data);
@@ -34,7 +18,6 @@ const CreateCardEditor = ({ styles }) => {
     <div className='rounded-lg  p-1'>
       <ControlledEditor
         onBeforeChange={handleChange}
-        placeholder='paste'
         value={value}
         data={data}
         className='text-mid-grey f-26'

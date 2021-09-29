@@ -1,35 +1,35 @@
 import React, { useEffect, useContext } from 'react';
 import { Link } from 'react-router-dom';
-import SearchCard from '../components/SearchCard';
-import Heading from '../components/Heading';
-import CardDisplay from '../components/CardDisplay';
-import CardTitle from '../components/CardTitle';
-import CardEditor from '../components/CardEditor';
-import EditDeleteFunctionality from '../components/EditDeleteFunctionality';
+import SearchSnippet from '../components/SearchSnippet';
+import SimpleTitle from '../components/SimpleTitle';
+import SnippetDisplay from '../components/SnippetDisplay';
+import SnippetLibEditor from '../components/SnippetLibEditor';
+import SnippetCrudFunctionality from '../components/SnippetCrudFunctionality';
 import UserContext from '../context/user/userContext';
 import { faPlusCircle } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import SnippetTitle from '../components/SnippetCardTitleAndSubTitle';
+
 const Home = () => {
   const userContext = useContext(UserContext);
-  const {
-    activeCard,
-    setEditorContent,
-    setEditState,
-    cards,
-    activateCard,
-  } = userContext;
-
+  const { activeCard, setEditState, cards, activateCard } = userContext;
   useEffect(() => {
     activateCard(cards[0]);
-    setEditorContent(activeCard.snippet);
     setEditState(false);
     // eslint-disable-next-line
-  }, []);
+  }, [cards]);
+
+  if (!cards) return <h1>No cards available</h1>;
 
   return (
     <div className='bg-light-grey mt-1 container-main p-2 rounded-lg z-depth-4'>
       <div className='container-main'>
-        <section className='mb-1 d-flex align-items-center justify-content-space-between'>
+        <section
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 1 }}
+          className='mb-1 d-flex align-items-center justify-content-space-between'
+        >
           <Link
             to='/createCard'
             className='btn btn-lg bg-dark text-white z-depth-1 B612'
@@ -54,14 +54,14 @@ const Home = () => {
         >
           {/* We want two main divs that split down the middle */}
           <div id='main_section_1' className='w-25 border-right-thin'>
-            <SearchCard />
-            <Heading title={'Snippet library'} />
-            <CardDisplay />
+            <SearchSnippet />
+            <SimpleTitle title={'Snippet library'} />
+            <SnippetDisplay />
           </div>
           <div id='main_section_2' className='w-75'>
-            <CardTitle />
-            <CardEditor styles={'p-1 border-bottom-thin text-dark-grey'} />
-            <EditDeleteFunctionality />
+            <SnippetTitle />
+            <SnippetLibEditor activeCard={activeCard} />
+            <SnippetCrudFunctionality />
           </div>
         </section>
       </div>
