@@ -5,7 +5,7 @@ const alerts = (state, action) => {
     case SET_ALERT:
       return [action.payload];
     case REMOVE_ALERT:
-      return state.filter((alert) => alert.id !== action.payload);
+      return;
     default:
       return state;
   }

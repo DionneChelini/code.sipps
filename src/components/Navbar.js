@@ -20,25 +20,13 @@ const Navbar = (props) => {
               Snip
             </h1>
             <ul className='d-flex m-0 justify-space-between'>
-              <li className='m-0 pr-1 f-14 text-white cursor-pointer'>
-                Extensions
-              </li>
               <Link to='/' className='m-0 pr-1 f-14 text-white cursor-pointer'>
-                Cards
+                Database
               </Link>
-              <li className='m-0 pr-1 f-14 text-white cursor-pointer'>
-                Snippets
+              <li className='m-0 pr-1 f-14 text-white cursor-pointer '>
+                Add Snippet
               </li>
-              <li className='m-0 pr-1 f-14 text-white cursor-pointer'>
-                Hotkeys
-              </li>
-              <li className='m-0 prp-8 f-14 text-white cursor-pointer'>
-                Train{' '}
-              </li>
-              <FontAwesomeIcon
-                icon={faAngleDown}
-                className='f-19 text-light-blue pr-1'
-              />{' '}
+              <li className='m-0 pr-1 f-14 text-white cursor-pointer'>Docs </li>
               <li className='m-0 prp-8 f-14 text-white cursor-pointer'>
                 More{' '}
               </li>

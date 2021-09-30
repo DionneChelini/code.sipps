@@ -28,7 +28,7 @@ const CreateCardEditor = ({ styles, value, setValue }) => {
           autocursor: true,
           smartIndent: true,
           lineWrapping: true,
-          mode: 'plaintext',
+          mode: 'c++',
           lineNumbers: false,
           foldGutter: true,
           autoCloseTags: true,

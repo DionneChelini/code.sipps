@@ -12,7 +12,7 @@ const SnippetDisplay = () => {
   if (!cards) return <h1>There are no cards</h1>;
 
   return (
-    <SimpleBar style={{ maxHeight: 380 }} className=''>
+    <SimpleBar style={{ maxHeight: 280 }} className=''>
       {filtered !== null
         ? filtered.map((card) => (
             <SnippetItem key={card.id} id={card.id} card={card} />

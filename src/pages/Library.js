@@ -10,7 +10,7 @@ import { faPlusCircle } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import SnippetTitle from '../components/SnippetCardTitleAndSubTitle';
 
-const Home = () => {
+const Library = () => {
   const userContext = useContext(UserContext);
   const { activeCard, setEditState, cards, activateCard } = userContext;
   useEffect(() => {
@@ -31,7 +31,7 @@ const Home = () => {
           className='mb-1 d-flex align-items-center justify-content-space-between'
         >
           <Link
-            to='/createCard'
+            to='/add_new_code_snippet'
             className='btn btn-lg bg-dark text-white z-depth-1 B612'
           >
             <FontAwesomeIcon
@@ -69,4 +69,4 @@ const Home = () => {
   );
 };
 
-export default Home;
+export default Library;

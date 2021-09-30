@@ -7,12 +7,12 @@ const BackButton = () => {
       <h5 className='titillium f-24 text-dark-grey m-0'>
         <Link
           to='/'
-          className='btn btn-lg text-light-blue bg-dark z-depth-1 B612 mr-1'
+          className='btn btn-lg text-white bg-dark z-depth-1 B612 mr-1'
         >
           {' '}
           <FontAwesomeIcon
             icon={faAngleLeft}
-            className='text-light-blue font-weight-light prp-5'
+            className='text-white font-weight-light prp-5'
           />
           BACK
         </Link>

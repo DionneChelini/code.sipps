@@ -1,8 +1,8 @@
 import React, { useReducer } from 'react';
 import UserContext from './userContext';
 import userReducer from './userReducer';
+import { v4 as uuid } from 'uuid';
 import {
-  GET_SNIPPETS,
   CREATE_CARD,
   SET_CARD,
   SET_EDIT_STATE,
@@ -16,7 +16,7 @@ const UserState = (props) => {
   const initialState = {
     cards: [
       {
-        id: 1,
+        id: uuid(),
         title: 'start a headless browser',
         subtitle: 'the library puppeteer',
         snippet:
@@ -43,7 +43,8 @@ const UserState = (props) => {
     dispatch({ type: SET_EDIT_STATE, payload: bool });
   };
   const createCard = (card) => {
-    dispatch({ type: CREATE_CARD, payload: card });
+    const id = uuid();
+    dispatch({ type: CREATE_CARD, payload: { ...card, id } });
   };
 
   const filterCards = (text) => {

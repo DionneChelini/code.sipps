@@ -1,7 +1,6 @@
 import {
   SET_CARD,
   CREATE_CARD,
-  GET_SNIPPETS,
   SET_EDIT_STATE,
   SET_EDITOR_STATE,
   FILTER_CARDS,
@@ -16,11 +15,7 @@ let reducer = (state, action) => {
         ...state,
         value: action.payload,
       };
-    case GET_SNIPPETS:
-      return {
-        ...state,
-        snippets: action.payload,
-      };
+
     case SET_CARD:
       return {
         ...state,
