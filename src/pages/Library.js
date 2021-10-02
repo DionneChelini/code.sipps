@@ -22,7 +22,7 @@ const Library = () => {
   if (!cards) return <h1>No cards available</h1>;
 
   return (
-    <div className='bg-light-grey mt-1 container-main p-2 rounded-lg z-depth-4'>
+    <div className='bg-light-grey mt-4 container-main p-2 rounded-lg z-depth-2'>
       <div className='container-main'>
         <section
           initial={{ opacity: 0 }}
@@ -32,11 +32,11 @@ const Library = () => {
         >
           <Link
             to='/add_new_code_snippet'
-            className='btn btn-lg bg-dark text-white z-depth-1 B612'
+            className='btn btn-lg border text-dark B612'
           >
             <FontAwesomeIcon
               icon={faPlusCircle}
-              className='f-20 text-light-blue plp-2'
+              className='f-20 text-dark plp-2'
             />{' '}
             ADD SNIPPET
           </Link>

@@ -1,8 +1,8 @@
-import React, { useContext, useEffect } from 'react';
-import UserContext from '../context/user/userContext';
-import SnippetItem from './SnippetItem';
-import SimpleBar from 'simplebar-react';
-import 'simplebar/dist/simplebar.min.css';
+import React, { useContext, useEffect } from "react";
+import UserContext from "../context/user/userContext";
+import SnippetItem from "./SnippetItem";
+import SimpleBar from "simplebar-react";
+import "simplebar/dist/simplebar.min.css";
 
 const SnippetDisplay = () => {
   const userContext = useContext(UserContext);

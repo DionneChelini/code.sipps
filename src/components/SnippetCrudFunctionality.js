@@ -23,18 +23,13 @@ const SnippetCrudFunctionality = () => {
       <div>
         <div
           onClick={editHandler}
-          className='btn btn-sm bg-black z-depth-1 text-white B612 cursor-pointer'
+          className='btn btn-sm border text-dark B612 cursor-pointer'
         >
-          <FontAwesomeIcon
-            icon={faPencilAlt}
-            className='f-14 text-light-blue'
-          />{' '}
-          EDIT
+          <FontAwesomeIcon icon={faPencilAlt} className='f-14 text-dark' /> EDIT
         </div>
         {editCard ? (
-          <div className='btn btn-sm bg-dark z-depth-1 text-mid-grey B612 cursor-pointer ml-1'>
-            <FontAwesomeIcon icon={faSave} className='f-14 text-light-blue' />{' '}
-            SAVE
+          <div className='btn btn-sm border text-dark B612 cursor-pointer ml-1'>
+            <FontAwesomeIcon icon={faSave} className='f-14 text-dark' /> SAVE
           </div>
         ) : (
           ''
@@ -43,22 +38,16 @@ const SnippetCrudFunctionality = () => {
       <div>
         <div
           onClick={deleteHandler}
-          className='btn btn-sm bg-black text-white  z-depth-1 B612 cursor-pointer mr-1'
+          className='btn btn-sm border text-dark B612 cursor-pointer mr-1'
         >
-          <FontAwesomeIcon
-            icon={faTrash}
-            className='f-14 prp-4 text-light-blue'
-          />{' '}
+          <FontAwesomeIcon icon={faTrash} className='f-14 prp-4 text-dark' />{' '}
           DELETE
         </div>
         <div
           onClick={prioritizeHandler}
-          className='btn btn-sm bg-black text-white  z-depth-1 B612 cursor-pointer'
+          className='btn btn-sm border text-dark  B612 cursor-pointer'
         >
-          <FontAwesomeIcon
-            icon={faCarrot}
-            className='f-14  prp-4 text-light-blue'
-          />{' '}
+          <FontAwesomeIcon icon={faCarrot} className='f-14  prp-4 text-dark' />{' '}
           PRIORITIZE
         </div>
       </div>

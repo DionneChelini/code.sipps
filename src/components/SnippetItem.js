@@ -22,20 +22,17 @@ const SnippetItem = ({ card, id }) => {
       onClick={onClick}
       className={`${
         activeCard.id === card.id
-          ? ' bg-light-blue z-depth-1'
+          ? ' bg-black text-white z-depth-1'
           : 'bg-white border'
-      }  mp-4 px-1 pyp-19 mbp-4  z-depth-1 pp-6 d-flex align-items-center justify-content-space-between cursor-pointer titillium rounded-lg `}
+      }  mp-4 px-1 pyp-19 mbp-4  z-depth-1 pp-6 d-flex align-items-center justify-content-space-between cursor-pointer titilliumRegular rounded-lg `}
     >
       <div>
         <p className='f-18 m-0'>
           {card.title.substring(0, 1).toUpperCase() + card.title.substring(1)}
         </p>
-        <p className='text-dark f-11 m-0'>{card.subtitle}</p>
+        <p className='text-grey f-11 m-0'>{card.subtitle}</p>
       </div>
-      <FontAwesomeIcon
-        icon={faAngleRight}
-        className='text-dark f-24 font-weight-light prp-4'
-      />
+      <FontAwesomeIcon icon={faAngleRight} className='text-grey f-24  prp-4' />
     </motion.div>
   );
 };

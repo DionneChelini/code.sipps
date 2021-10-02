@@ -5,10 +5,10 @@ import { Link } from 'react-router-dom';
 const Navbar = (props) => {
   return (
     <>
-      <div className='sticky-top bg-black'>
+      <div className='sticky-top bg-purple'>
         <section
           id='navbar'
-          className='py-2 d-flex align-items-center justify-content-space-between container-main bg-black'
+          className='py-2 d-flex align-items-center justify-content-space-between container-main bg-purple'
         >
           <div className='d-flex align-items-center'>
             <h1 className='f-23 titillium text-white font-weight-bold m-0'>
@@ -17,7 +17,7 @@ const Navbar = (props) => {
                 icon={faHandScissors}
                 className='f-20 text-light-blue plp-2'
               />{' '}
-              Snip
+              Snips
             </h1>
             <ul className='d-flex m-0 justify-space-between'>
               <Link to='/' className='m-0 pr-1 f-14 text-white cursor-pointer'>
